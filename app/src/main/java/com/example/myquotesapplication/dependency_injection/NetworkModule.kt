@@ -2,6 +2,7 @@ package com.example.myquotesapplication.dependency_injection
 
 import com.example.myquotesapplication.data.remote.ApiInterface
 import com.example.myquotesapplication.network.BASE_URL
+import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -9,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Singleton
+@Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
