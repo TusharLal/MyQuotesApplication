@@ -7,14 +7,17 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import com.example.myquotesapplication.presentation.components.ToolBarComponent
 import com.example.myquotesapplication.presentation.screens.home_screen.components.HomeBody
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
-    Scaffold(modifier = Modifier.fillMaxSize(),
+fun HomeScreen(onClick: () -> Unit) {
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
         topBar = {
             ToolBarComponent(title = "Home")
         }
@@ -24,7 +27,7 @@ fun HomeScreen() {
                 .padding(paddingValues)
                 .fillMaxSize()
         ) {
-            HomeBody()
+            HomeBody(onClick)
         }
     }
 }
@@ -32,5 +35,5 @@ fun HomeScreen() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun HomeScreenPreview() {
-    HomeScreen()
+    HomeScreen { }
 }

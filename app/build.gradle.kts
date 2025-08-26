@@ -56,8 +56,11 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
+    //Hilt Navigation
+//    implementation(libs.hilt.navigation)
+
     //Navigation
-    implementation(libs.hilt.navigation)
+    implementation(libs.androidx.navigation.compose)
 
     //Retrofit
     implementation(libs.bundles.retrofit)

@@ -10,20 +10,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import com.example.myquotesapplication.presentation.components.ToolBarComponent
 import com.example.myquotesapplication.presentation.screens.details_screen.components.DetailQuote
 
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(
+    onBackPress: () -> Unit,
+) {
     Scaffold(
         topBar = {
             ToolBarComponent(
                 showBackIcon = true,
                 title = "Details",
-                onBackPressed = {
-
-                }
+                onBackPressed = onBackPress
             )
         },
         modifier = Modifier.fillMaxWidth()
@@ -43,5 +45,5 @@ fun DetailsScreen() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun DetailsScreenPreview() {
-    DetailsScreen()
+    DetailsScreen {}
 }
